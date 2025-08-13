@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Selectors Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background: linear-gradient(135deg, #89f7fe, #66a6ff);
+            transition: background 1s ease;
+            color: white;
+        }
+        h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+            transition: transform 0.5s ease;
+        }
+        p {
+            font-size: 1.2rem;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 8px;
+            margin: 10px auto;
+            width: fit-content;
+            transition: background 0.5s ease;
+        }
+        button {
+            padding: 12px 25px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 25px;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.2s ease, background 0.3s ease;
+        }
+        button:hover {
+            transform: scale(1.08);
+            background: linear-gradient(135deg, #ff5e78, #ff6da8);
+        }
+        .container {
+            background: rgba(0,0,0,0.2);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: inline-block;
+        }
+        .highlight {
+            background: yellow;
+            color: black;
+            font-weight: bold;
+            transition: background 0.5s ease, color 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">Hello JavaScript</h1>
+    <p class="info">This is paragraph one.</p>
+    <p class="info">This is paragraph two.</p>
+    <button id="magicBtn">Click Me</button>
+    <div class="container">
+        <span>Inside container</span>
+    </div>
+
+    <script src="selectors.js"></script>
+</body>
+</html>

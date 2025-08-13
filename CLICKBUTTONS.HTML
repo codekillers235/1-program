@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interactive Button Click Events</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 30px;
+    background: linear-gradient(135deg, #ffecd2, #fcb69f);
+    transition: background 1s ease;
+  }
+  h1 {
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  }
+  button {
+    padding: 12px 24px;
+    margin: 10px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #4CAF50, #2e7d32);
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: transform 0.2s ease, background 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  }
+  button:hover {
+    background: linear-gradient(135deg, #45a049, #1b5e20);
+    transform: scale(1.05);
+  }
+  button:active {
+    transform: scale(0.95);
+  }
+  #output {
+    margin-top: 30px;
+    font-size: 1.5rem;
+    color: white;
+    background: rgba(0,0,0,0.3);
+    padding: 15px;
+    border-radius: 15px;
+    display: inline-block;
+    min-width: 250px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: background 0.5s ease, transform 0.5s ease;
+  }
+  .pop {
+    animation: pop 0.5s ease;
+  }
+  @keyframes pop {
+    0% { transform: scale(0.8); opacity: 0; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); }
+  }
+</style>
+</head>
+<body>
+
+<h1>✨ Interactive Button Clicks ✨</h1>
+
+<button id="btn1">Button 1</button>
+<button id="btn2">Button 2</button>
+<button id="btn3">Button 3</button>
+
+<p id="output">Click a button to see something cool!</p>
+
+<script>
+  const output = document.getElementById("output");
+  const body = document.body;
+
+  function showMessage(message, bgColor) {
+    output.textContent = message;
+    output.classList.remove("pop");
+    void output.offsetWidth; // Restart animation
+    output.classList.add("pop");
+    body.style.background = bgColor;
+  }
+
+  document.getElementById("btn1").addEventListener("click", () => {
+    showMessage("🎉 You clicked Button 1! Let's celebrate!", "linear-gradient(135deg, #ff9a9e, #fad0c4)");
+  });
+
+  document.getElementById("btn2").addEventListener("click", () => {
+    showMessage("🚀 You clicked Button 2! Blast off to fun!", "linear-gradient(135deg, #a1c4fd, #c2e9fb)");
+  });
+
+  document.getElementById("btn3").addEventListener("click", () => {
+    showMessage("💡 You clicked Button 3! Bright idea!", "linear-gradient(135deg, #fbc2eb, #a6c1ee)");
+  });
+</script>
+
+</body>
+</html>

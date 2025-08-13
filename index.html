@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modern JavaScript and DOM</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #89f7fe, #66a6ff);
+            transition: background 1s ease;
+            padding-top: 100px;
+            color: white;
+        }
+        h1 {
+            font-size: 3rem;
+            transition: transform 0.5s ease, color 0.5s ease;
+        }
+        .pop {
+            animation: pop 0.6s ease;
+        }
+        @keyframes pop {
+            0% { transform: scale(0.8); opacity: 0; }
+            50% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+        button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 30px;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.2s ease, background 0.3s ease;
+        }
+        button:hover {
+            transform: scale(1.08);
+            background: linear-gradient(135deg, #ff5e78, #ff6da8);
+        }
+    </style>
+</head>
+<body>
+    <li><a href="index.html">JAVASCRIPT FILE</a></li>
+    <li><a href="selectors.html">Selectors</a></li>
+    <li><a href="EVENTLISTENERS.HTML">Event Listeners</a></li>
+    <li><a href="CLICKBUTTONS.HTML">Click Buttons</a></li>
+    <li><a href="functions.html">Functions</a></li>
+    <h1 id="heading">Hello, Codekillers!</h1>
+    <button onclick="changeText()">Click Me</button>
+
+    <!-- Linking external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

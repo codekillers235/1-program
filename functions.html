@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Three Types of Functions</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(135deg, #89f7fe, #66a6ff);
+    color: white;
+  }
+  h2 {
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+  }
+  button {
+    padding: 12px 24px;
+    margin: 8px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+  }
+  button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  }
+  #output {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    font-size: 1.3rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    min-height: 60px;
+    animation: fadeIn 0.5s ease;
+  }
+  .pop {
+    animation: pop 0.5s ease;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes pop {
+    0% { transform: scale(0.9); opacity: 0; }
+    50% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); }
+  }
+</style>
+</head>
+<body>
+
+<h2>✨ JavaScript Function Types ✨</h2>
+<button onclick="greet()">Function Declaration</button>
+<button onclick="farewell()">Function Definition</button>
+<button onclick="multiplyNumbers()">Arrow Function</button>
+
+<p id="output">Click a button to run a function.</p>
+
+<script>
+  const output = document.getElementById("output");
+
+  // Helper to animate output
+  function showOutput(message) {
+    output.textContent = message;
+    output.classList.remove("pop");
+    void output.offsetWidth; // Restart animation
+    output.classList.add("pop");
+  }
+
+  // i. Function Declaration
+  function greet() {
+    showOutput("👋 Hello! This is a Function Declaration.");
+  }
+
+  // ii. Function Definition (Function Expression)
+  const farewell = function() {
+    showOutput("👋 Goodbye! This is a Function Expression (Definition).");
+  };
+
+  // iii. Arrow Function
+  const multiplyNumbers = () => {
+    let a = 5, b = 3;
+    showOutput(`➗ Multiplication: ${a} × ${b} = ${a * b} (Arrow Function)`);
+  };
+</script>
+
+</body>
+</html>
